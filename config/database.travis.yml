@@ -7,4 +7,4 @@ default: &default
 
 test:
   <<: *default
-  database: white_rabbit_test
+  database: scoring_processing_test
