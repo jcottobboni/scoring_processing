@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      board: 'Board'
+    attributes:
+      board:
+        name: 'Name'
+        project: 'Project'

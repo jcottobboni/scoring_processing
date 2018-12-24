@@ -1,0 +1,9 @@
+en:
+  projects:
+    new:
+      new_project: New project
+    saved: Project saved with success
+    edit:
+      edit_project: Edit project
+    show:
+      show_project: Project detail

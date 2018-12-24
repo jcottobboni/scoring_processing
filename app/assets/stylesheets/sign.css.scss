@@ -1,0 +1,51 @@
+.sign-container {
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #a2a2a280;
+  border-radius: 3px;
+  box-shadow: -5px 5px 10px #bdbdbd99;
+}
+
+.sign-container .links-container {
+  margin-top: 20px;
+}
+
+.sign-container .sign-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.sign-tabs .nav-item {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.sign-tabs li:last-of-type {
+  border-left: 1px solid #a2a2a280;
+}
+
+.sign-tabs li:not(.active) {
+  background-color: #e7e7e799;
+}
+
+.sign-tabs li.active {
+  border-bottom: 3px solid #007cad80;
+}
+
+.sign-tabs li.active a {
+  font-weight: 600;
+}
+
+.nav-item a {
+  margin: 0 auto;
+}
+
+.sign-container .tab-content {
+  border-top: 1px solid #a2a2a280;
+  padding: 20px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="<%= I18n.locale %>">
+<head>
+  <meta content="text/html; charset=utf-8" http_equiv="Content-type"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+    <%= full_title(yield(:title)) %>
+  </title>
+  <meta content="IE=edge" http_equi="X-UA-Compatible"/>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div class="container container-fluid">
+  <%= yield %>
+</div>
+</body>
+</html>

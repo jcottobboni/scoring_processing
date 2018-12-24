@@ -1,0 +1,29 @@
+- content_for :title, I18n.t('devise.pages.sign_up')
+
+.sign-container
+  %ul.sign-tabs
+    %li.nav-item
+      = link_to I18n.t('devise.pages.log_in'), new_session_path(resource_name),
+        class: 'nav-link'
+    %li.nav-item.active
+      = link_to I18n.t('devise.pages.sign_up'), new_registration_path(resource_name),
+        class: 'nav-link'
+  .tab-content
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :name, required: true, autofocus: true,
+          input_html: { autocomplete: 'name' }
+        = f.input :username, required: true, input_html: { autocomplete: 'username' }
+        = f.input :email, required: true, input_html: { autocomplete: 'email' }
+        = f.input :password, required: true,
+          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+          input_html: { autocomplete: "new-password" }
+        = f.input :password_confirmation, required: true,
+          input_html: { autocomplete: 'new-password' }
+
+      .form-actions
+        = f.button :submit, 'Sign up'
+
+    = render 'devise/shared/links'

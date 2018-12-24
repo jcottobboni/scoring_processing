@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    models:
+      scores: 'Pontuacao'
+    attributes:
+      scores:
+              user_id: 'Usuario'
+

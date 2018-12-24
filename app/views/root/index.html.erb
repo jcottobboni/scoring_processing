@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  Ranking de pontuação dos usuários
+  <% @users.each do |user| %>
+    <div class="progress" style="margin-top: 10px;">
+      <div class="progress-bar" role="progressbar" style="width: <%=user.actual_percentage%>%;" aria-valuemin="0"
+           aria-valuemax="100">
+        <%=user.username%> - <%=user.actual_score%> pontos</div>
+    </div>
+  <% end %>
+</div>

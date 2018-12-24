@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Score date:</strong>
+  <%= @score.score_date.to_s_br %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @score.username %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @score.user.username %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @score.points %>
+</p>
+<% if can? :update, Score %>
+  <%= link_to_edit edit_score_path(:id => @score) %>
+<% end %>
+<%= link_to 'Voltar', scores_path ,class: 'btn'%>

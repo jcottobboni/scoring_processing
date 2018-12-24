@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: white_rabbit
+  password: "secure password"
+  host: localhost
+
+development:
+  <<: *default
+  database: white_rabbit_development
+
+test:
+  <<: *default
+  database: white_rabbit_test
+
+production:
+  <<: *default
+  database: white_rabbit_production

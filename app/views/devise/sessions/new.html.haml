@@ -1,0 +1,25 @@
+- content_for :title, I18n.t('devise.pages.log_in')
+
+.sign-container
+  %ul.sign-tabs
+    %li.nav-item.active
+      = link_to I18n.t('devise.pages.log_in'), new_session_path(resource_name),
+        class: 'nav-link'
+    %li.nav-item
+      = link_to I18n.t('devise.pages.sign_up'), new_registration_path(resource_name),
+        class: 'nav-link'
+  .tab-content
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email, required: false, autofocus: true,
+          input_html: { autocomplete: 'email' }
+
+        = f.input :password, required: false,
+          input_html: { autocomplete: 'current-password' }
+
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+
+      .form-actions
+        = f.button :submit, 'Log in'
+
+    = render 'devise/shared/links'

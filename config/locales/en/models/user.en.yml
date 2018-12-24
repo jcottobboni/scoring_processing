@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      user: 'User'
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Name'
+        bio: 'Bio'
+        url: 'Website'
+        location: 'Location'
+        username: 'Username'

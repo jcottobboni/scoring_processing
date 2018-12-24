@@ -1,0 +1,39 @@
+<h1>Scores</h1>
+<% if can? :create, Score %>
+  <%= link_to 'New Score', new_score_path, class: 'btn btn-sm btn-primary' %>
+<% end %>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Score date</th>
+    <th>Username</th>
+    <th>Points</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @scores.each do |score| %>
+    <tr>
+      <td><%= score.score_date.to_s_br %></td>
+      <td><%= score.username %></td>
+      <td><%= score.points %></td>
+      <td>
+        <% if can? :show, Score %>
+          <%= link_to_show score_path(:id => score) %>
+        <% end %>
+        <% if can? :update, Score %>
+          <%= link_to_edit edit_score_path(:id => score) %>
+        <% end %>
+        <% if can? :destroy, Score %>
+          <%= link_to_remove score_path(:id => score) %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @scores %>
+
+
